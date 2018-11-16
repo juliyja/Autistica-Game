@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<title>AUTISTICA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type = "text/javascript"  src="{{ url_for('static', filename = 'js/js-index.js') }}" ></script>
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('/static/images/background.png');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+#loginForm {
+  display:none;
+}
+#registerationForm{
+  display:none;
+}
+.divLoginRegisterationForm{
+  padding-top:25px;
+}
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+.step.finish {
+  background-color: #4CAF50;
+}
+</style>
+<body>
+
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-black">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+      AUTISTICA
+    </div>
+    <div class="w3-display-middle">
+      <script type = "text/javascript"  src="{{ url_for('static', filename = 'js/questionnaires/js-generic-file.js') }}" ></script>
+      <form id="regForm" action="" method="POST">
+
+        <h1>Demographics:</h1>
+        <div class="tab">
+          <div class="form-group">
+            <label for="Age">Age: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+          </div>
+          <div class="form-group">
+            <label for="sel1">Gender: </label>
+            <select class="form-control" id="sel1" name="sel1">
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tab">
+          <div class="form-group">
+            <label for="sel1">Diagnosis: </label>
+            <select class="form-control" id="sel1" name="sel2">
+              <option>Autistic</option>
+              <option>Non-Autistic (work with an autistic employee)</option>
+              <option>Non-Autistic (don’t know any other autistic employees)</option>
+              <option>Undiagnosed (but potentially autistic)</option>
+              <option>Neurodivergent (e.g. dyslexic)</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Age">Type of Organisation: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Type of organisation" name="typeOfOrg">
+          </div>
+        </div>
+
+        <div class="tab">
+          <div class="form-group">
+            <label for="Age">Size of organisation: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Size of Organization" name="sizeOfOrg">
+          </div>
+          <div class="form-group">
+            <label for="Age">Number of people you work with on a daily basis: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Number of People you work with on daily basis" name="NoP">
+          </div>
+        </div>
+
+        <div class="tab">
+          <div class="form-group">
+            <label for="Age">Months spent in organization: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Months spent in org" name="monthinorg">
+          </div>
+          <div class="form-group">
+            <label for="Age">Annual salary: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Annual Salary" name="annsal">
+          </div>
+        </div>
+
+        <div class="tab">
+          <div class="form-group">
+            <label for="Age">Level of education (primary, secondary, diploma, undergraduate, postgraduate): </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Level of Education" name="levelofEd">
+          </div>
+          <div class="form-group">
+            <label for="Age">Number of past jobs: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Number of past jobs" name="NumPj">
+          </div>
+          <div class="form-group">
+            <label for="Age">number of people from your personal life that you feel can provide support/advice about your work </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Number of People" name="numPep">
+          </div>
+          <div class="form-group">
+            <label for="Age">Have you been promoted?</label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Have you been promoted" name="Promo">
+          </div>
+          <div class="form-group">
+            <label for="Age">What is your current job </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="current job" name="curJob">
+          </div>
+        </div>
+
+        <div style="overflow:auto;">
+          <div style="float:right;">
+            <button class="btn btn-primary" type="button" id="prevBtn">Previous</button>
+            <button class="btn btn-primary" type="button" id="nextBtn">Next</button>
+            <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+          </div>
+        </div>
+
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</body>
+</html>

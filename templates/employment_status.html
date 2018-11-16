@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<title>AUTISTICA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type = "text/javascript"  src="{{ url_for('static', filename = 'js/js-index.js') }}" ></script>
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('/static/images/background.png');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+#loginForm {
+  display:none;
+}
+#registerationForm{
+  display:none;
+}
+.divLoginRegisterationForm{
+  padding-top:25px;
+}
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+.step.finish {
+  background-color: #4CAF50;
+}
+</style>
+<body>
+
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-black">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+      AUTISTICA
+    </div>
+    <div class="w3-display-middle">
+      <script type = "text/javascript"  src="{{ url_for('static', filename = 'js/questionnaires/js-generic-file.js') }}" ></script>
+      <form id="regForm" action="" method="POST">
+
+        <h1>Employment Status:</h1>
+        <div class="tab">
+          <div class="form-group">
+            <label for="Age">Have you been promoted? </label>
+            <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+            <label class="radio-inline"><input type="radio" name="optradio">No</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
+          </div>
+          <div class="form-group">
+            <label for="Age">Have you left your current job? </label>
+            <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+            <label class="radio-inline"><input type="radio" name="optradio">No</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
+          </div>
+        </div>
+
+        <div class="tab">
+          <div class="form-group">
+            <label for="sel1">Have you changed the hours you work? </label>
+            <select class="form-control" id="sel1">
+              <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+              <label class="radio-inline"><input type="radio" name="optradio">No</label>
+              <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Age">Have you changed your job role within the organisation? </label>
+            <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+            <label class="radio-inline"><input type="radio" name="optradio">No</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
+          </div>
+        </div>
+
+        <div class="tab">
+          <div class="form-group">
+            <label for="Age">Are you currently looking for a job? </label>
+            <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+            <label class="radio-inline"><input type="radio" name="optradio">No</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
+          </div>
+          <div class="form-group">
+            <label for="Age">Are you no longer interested in being in employment? </label>
+            <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+            <label class="radio-inline"><input type="radio" name="optradio">No</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
+          </div>
+          <div class="form-group">
+            <label for="Age">Have you started a new job in a new organisation? </label>
+            <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+            <label class="radio-inline"><input type="radio" name="optradio">No</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
+          </div>
+        </div>
+
+        <div style="overflow:auto;">
+          <div style="float:right;">
+            <button class="btn btn-primary" type="button" id="prevBtn">Previous</button>
+            <button class="btn btn-primary" type="button" id="nextBtn">Next</button>
+            <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+          </div>
+        </div>
+
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</body>
+</html>

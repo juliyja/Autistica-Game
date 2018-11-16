@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phaser Platform Game with Behaviors</title>
+</head>
+<style>
+.hideImg{
+  display:none;
+}
+</style>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/photonstorm/phaser/v2.6.2/build/phaser.min.js"></script>
+<script src="https://unpkg.com/phaser-behavior-plugin@0.1.0/dist/phaser-behavior-plugin.min.js"></script>
+<!--<script src="../static/js/behaviors/collision-handler.js"></script>
+<script src="../static/js/behaviors/platformer.js"></script>
+<script src="../static/js/game.js"></script>-->
+
+<img class="hideImg" id="wall" src="{{url_for('static', filename='images/wall2.png')}}">
+<img class="hideImg" id="player" src="{{url_for('static', filename='images/fox.png')}}">
+<img class="hideImg" id="coin" src="{{url_for('static', filename='images/coinv2.png')}}">
+<img class="hideImg" id="teleport" src="{{url_for('static', filename='images/teleport.png')}}">
+<img class="hideImg" id="question" src="{{url_for('static', filename='images/question.png')}}">
+<img class="hideImg" id="grass" src="{{url_for('static', filename='images/grass.png')}}">
+<img class="hideImg" id="tree" src="{{url_for('static', filename='images/treeSmall.png')}}">
+<img class="hideImg" id="tree1" src="{{url_for('static', filename='images/midTree.png')}}">
+<img class="hideImg" id="tree2" src="{{url_for('static', filename='images/treeBig.png')}}">
+
+<script src="{{url_for('static', filename='js/behaviors/collision-handler.js')}}"></script>
+<script src="{{url_for('static', filename='js/behaviors/platformer.js')}}"></script>
+<script src="{{url_for('static', filename='js/game.js')}}"></script>
+
+
+
+</body>
+</html>

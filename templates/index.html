@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<title>AUTISTICA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type = "text/javascript"  src="{{ url_for('static', filename = 'js/js-index.js') }}" ></script>
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('../static/images/background.png');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+#loginForm {
+  display:none;
+}
+#registerationForm{
+  display:none;
+}
+.divLoginRegisterationForm{
+  padding-top:25px;
+}
+</style>
+<body>
+
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-black">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+      AUTISTICA
+    </div>
+    <div class="w3-display-middle">
+
+      <button type="button" class="btn btn-primary" id="loginButton">
+        <h1 class="w3-jumbo w3-animate-top">LOGIN</h1>
+      </button>
+      <button type="button" class="btn btn-success" id="registerationButton">
+        <h1 class="w3-jumbo w3-animate-top">REGISTER</h1>
+      </button>
+
+      <div class="divLoginRegisterationForm">
+
+        <form action="#" method="POST">
+
+          <div id="loginForm">
+            <div class="form-group">
+              <label for="email">Email: </label>
+              <input type="email" class="form-control" id="loginEmail" value="{{userEmail}}" placeholder="Enter email" name="loginEmail">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" name="loginPassword">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+
+          <div id="registerationForm"><!-- action="/action_page.php" -->
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="registerEmail" placeholder="Enter email" name="registerEmail">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="registerPassword" placeholder="Enter password" name="registerPassword">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Confirm Password:</label>
+              <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Enter password" name="registerConfirmPassword">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

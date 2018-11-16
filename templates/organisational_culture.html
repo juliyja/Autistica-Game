@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<title>AUTISTICA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type = "text/javascript"  src="{{ url_for('static', filename = 'js/js-index.js') }}" ></script>
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('/static/images/background.png');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+#loginForm {
+  display:none;
+}
+#registerationForm{
+  display:none;
+}
+.divLoginRegisterationForm{
+  padding-top:25px;
+}
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+.step.finish {
+  background-color: #4CAF50;
+}
+</style>
+<body>
+
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-black">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+      AUTISTICA
+    </div>
+    <div class="w3-display-middle">
+      <script type = "text/javascript"  src="{{ url_for('static', filename = 'js/questionnaires/js-generic-file.js') }}" ></script>
+      <form id="regForm" action="" method="POST">
+
+        <h1>Organisational Culture:</h1>
+        <div class="tab">
+          <div class="form-group">
+            <label for="sel1">The people I work with have excellent knowledge of autism: </label>
+            <select class="form-control" id="sel1">
+              <option>0 (Strongly Agree)</option>
+              <option>1 (Somewhat Agree)</option>
+              <option>2 (Somewhat Disagree)</option>
+              <option>3 (Strongly Agree)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sel1">I feel that if a new person was to join the team and they disclosed they were autistic, they would be well supported and understood by others: </label>
+            <select class="form-control" id="sel1">
+              <option>0 (Strongly Agree)</option>
+              <option>1 (Somewhat Agree)</option>
+              <option>2 (Somewhat Disagree)</option>
+              <option>3 (Strongly Agree)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tab">
+          <div class="form-group">
+            <label for="sel1">I feel that the management of the team are constantly improving their knowledge about autism: </label>
+            <select class="form-control" id="sel1">
+              <option>0 (Strongly Agree)</option>
+              <option>1 (Somewhat Agree)</option>
+              <option>2 (Somewhat Disagree)</option>
+              <option>3 (Strongly Agree)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sel1">It is easy to find information within the organisation about supporting autistic employees: </label>
+            <select class="form-control" id="sel1">
+              <option>0 (Strongly Agree)</option>
+              <option>1 (Somewhat Agree)</option>
+              <option>2 (Somewhat Disagree)</option>
+              <option>3 (Strongly Agree)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tab">
+          <div class="form-group">
+            <label for="sel1">There are established pathways for autistic people to seek advice and support for managing their daily work activities: </label>
+            <select class="form-control" id="sel1">
+              <option>0 (Strongly Agree)</option>
+              <option>1 (Somewhat Agree)</option>
+              <option>2 (Somewhat Disagree)</option>
+              <option>3 (Strongly Agree)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sel1">The organisation has been proactive in making adjustments and providing autism awareness training for employees: </label>
+            <select class="form-control" id="sel1">
+              <option>0 (Strongly Agree)</option>
+              <option>1 (Somewhat Agree)</option>
+              <option>2 (Somewhat Disagree)</option>
+              <option>3 (Strongly Agree)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sel1">I think the organisation performs better than other organisations in the sector in terms of quality of support for autistic employees: </label>
+            <select class="form-control" id="sel1">
+              <option>0 (Strongly Agree)</option>
+              <option>1 (Somewhat Agree)</option>
+              <option>2 (Somewhat Disagree)</option>
+              <option>3 (Strongly Agree)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="overflow:auto;">
+          <div style="float:right;">
+            <button class="btn btn-primary" type="button" id="prevBtn">Previous</button>
+            <button class="btn btn-primary" type="button" id="nextBtn">Next</button>
+            <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+          </div>
+        </div>
+
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</body>
+</html>
